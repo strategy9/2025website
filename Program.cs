@@ -1,4 +1,6 @@
 using Strategy9Website.Services;
+using Microsoft.EntityFrameworkCore;
+using Strategy9Website.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,10 @@ builder.Services.AddHttpClient();
 
 // Register EmailIQ Service
 builder.Services.AddScoped<IEmailIQService, EmailIQService>();
+
+// Add DbContext
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 var app = builder.Build();
 
@@ -20,9 +26,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -1,38 +1,40 @@
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+
 @{
     ViewData["Title"] = "Home";
 }
 
 <!-- Hero Section -->
-<section id="home" class="pt-24 pb-16 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800">
+<section id="home" class="pt-24 pb-16 bg-gradient-to-br from-[#3eb3e6] via-[#2a8fc9] to-[#005b8b]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="text-white">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                     Casino Marketing Technology That Actually Works
                 </h1>
-                <p class="text-xl md:text-2xl mb-8 text-indigo-100">
+                <p class="text-xl md:text-2xl mb-8 text-blue-100">
                     25+ years building enterprise software for 70+ hospitality properties. SOC2 certified. No vaporware.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#products" class="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 text-center">
+                    <a href="#products" class="bg-white text-[#005b8b] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 text-center">
                         Explore Our Products
                     </a>
-                    <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 text-center">
+                    <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#005b8b] text-center">
                         Schedule a Demo
                     </a>
                 </div>
                 
                 <!-- Trust Badges -->
                 <div class="mt-12 flex flex-wrap items-center gap-8">
-                    <div class="text-indigo-100">
+                    <div class="text-blue-100">
                         <div class="text-3xl font-bold text-white">70+</div>
                         <div class="text-sm">Properties</div>
                     </div>
-                    <div class="text-indigo-100">
+                    <div class="text-blue-100">
                         <div class="text-3xl font-bold text-white">25+</div>
                         <div class="text-sm">Years Experience</div>
                     </div>
-                    <div class="text-indigo-100">
+                    <div class="text-blue-100">
                         <div class="text-3xl font-bold text-white">SOC2</div>
                         <div class="text-sm">Type 1 Certified</div>
                     </div>
@@ -43,7 +45,7 @@
             <div class="hidden md:block">
                 <!-- TODO: Add hero image from Envato Elements -->
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                    <div class="aspect-video bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <div class="aspect-video bg-gradient-to-br from-[#3eb3e6] to-[#005b8b] rounded-lg flex items-center justify-center">
                         <p class="text-white text-center px-4">Hero Image:<br/>Dashboard or Technology Visual</p>
                     </div>
                 </div>
@@ -66,14 +68,14 @@
             
             <!-- PlayerIQ Card -->
             <div class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-16 h-16 bg-[#e8f6fc] rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-[#3eb3e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                     </svg>
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-3">PlayerIQ</h3>
                 <p class="text-gray-600 mb-4">Complete casino guest experience platform with PWA, queue management, digital offers, and real-time messaging.</p>
-                <a href="https://pwa.playeriq.com" target="_blank" rel="noopener" class="text-indigo-600 font-semibold hover:text-indigo-700 inline-flex items-center">
+                <a href="https://pwa.playeriq.com" target="_blank" rel="noopener" class="text-[#3eb3e6] font-semibold hover:text-[#2a8fc9] inline-flex items-center">
                     Learn More 
                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -83,14 +85,14 @@
 
             <!-- EmailIQ Card -->
             <div class="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-16 h-16 bg-[#e5f2f7] rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-[#005b8b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-3">EmailIQ</h3>
                 <p class="text-gray-600 mb-4">Casino email marketing with unmatched deliverability, complete data transparency, and unlimited sending.</p>
-                <a href="https://www.emailiq.ca" target="_blank" rel="noopener" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center">
+                <a href="https://www.emailiq.ca" target="_blank" rel="noopener" class="text-[#005b8b] font-semibold hover:text-[#004a70] inline-flex items-center">
                     Learn More 
                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -173,38 +175,504 @@
 <!-- Survey Demo Section -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">Experience SurveyIQ in Action</h2>
-                <p class="text-xl text-gray-600 mb-8">
-                    See how easy it is to gather insights from your guests. Take our quick survey and experience the same technology used by 70+ properties.
-                </p>
-                <div class="bg-white border-l-4 border-indigo-600 p-6 rounded-lg shadow-sm">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Experience SurveyIQ in Action</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                See how easy it is to gather insights from your guests. Take our quick survey and experience the same technology used by 70+ properties.
+            </p>
+        </div>
+
+        <div class="max-width-4xl mx-auto">
+            <!-- SurveyIQ Live Demo -->
+            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-gray-200">
+                <div class="flex items-center justify-center mb-8">
+                    <div class="bg-gradient-to-r from-[#3eb3e6] to-[#005b8b] text-white px-6 py-2 rounded-full font-bold text-sm">
+                        LIVE SURVEYIQ DEMO
+                    </div>
+                </div>
+
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                        What's your biggest challenge in casino marketing right now?
+                    </h3>
+                    <p class="text-gray-600">Click an option to see instant results</p>
+                </div>
+
+                <div id="surveyButtons" class="grid gap-3 max-w-2xl mx-auto">
+                    <a href="https://default.surveyiq.com/s/e/anonymous/70/5"
+                       class="survey-answer-button px-6 py-4 bg-white border-2 border-[#3eb3e6] text-[#3eb3e6] rounded-lg font-semibold hover:bg-[#3eb3e6] hover:text-white transition-all duration-300 text-center block"
+                       onclick="trackSurveyResponse(5, 'Guest data collection', event)">
+                        📊 Guest data collection
+                    </a>
+                    <a href="https://default.surveyiq.com/s/e/anonymous/70/4"
+                       class="survey-answer-button px-6 py-4 bg-white border-2 border-[#3eb3e6] text-[#3eb3e6] rounded-lg font-semibold hover:bg-[#3eb3e6] hover:text-white transition-all duration-300 text-center block"
+                       onclick="trackSurveyResponse(4, 'Email deliverability', event)">
+                        📧 Email deliverability
+                    </a>
+                    <a href="https://default.surveyiq.com/s/e/anonymous/70/3"
+                       class="survey-answer-button px-6 py-4 bg-white border-2 border-[#3eb3e6] text-[#3eb3e6] rounded-lg font-semibold hover:bg-[#3eb3e6] hover:text-white transition-all duration-300 text-center block"
+                       onclick="trackSurveyResponse(3, 'Staff shortages', event)">
+                        👥 Staff shortages
+                    </a>
+                    <a href="https://default.surveyiq.com/s/e/anonymous/70/2"
+                       class="survey-answer-button px-6 py-4 bg-white border-2 border-[#3eb3e6] text-[#3eb3e6] rounded-lg font-semibold hover:bg-[#3eb3e6] hover:text-white transition-all duration-300 text-center block"
+                       onclick="trackSurveyResponse(2, 'Player engagement', event)">
+                        🎰 Player engagement
+                    </a>
+                    <a href="https://default.surveyiq.com/s/e/anonymous/70/1"
+                       class="survey-answer-button px-6 py-4 bg-white border-2 border-[#3eb3e6] text-[#3eb3e6] rounded-lg font-semibold hover:bg-[#3eb3e6] hover:text-white transition-all duration-300 text-center block"
+                       onclick="trackSurveyResponse(1, 'Contest management', event)">
+                        🎁 Contest management
+                    </a>
+                </div>
+
+                <!-- Results Display -->
+                <div id="surveyResults" style="display: none;" class="mt-8">
+                    <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-2xl font-bold text-[#3eb3e6] mb-6 text-center">
+                            Thank You! Here's What Other Casino Marketers Said:
+                        </h3>
+                        <div id="resultsChart" class="space-y-4">
+                            <!-- Results will be populated here -->
+                        </div>
+                        <p class="text-center text-gray-600 text-sm mt-6">
+                            <strong class="text-[#3eb3e6]">This is SurveyIQ in action:</strong> Instant responses, real-time analytics, 40%+ response rates
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6 text-gray-600 text-sm">
+                    See how easy it is to get instant guest feedback? Your property could be collecting this data today.
+                </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="grid md:grid-cols-2 gap-6 mt-8 max-w-4xl mx-auto">
+                <div class="bg-white border-l-4 border-[#3eb3e6] p-6 rounded-lg shadow-sm">
                     <h3 class="font-semibold text-gray-900 mb-2">Real-Time Analytics</h3>
                     <p class="text-gray-600">Every response is instantly analyzed and available in your dashboard. No waiting, no delays.</p>
                 </div>
-            </div>
-            
-            <!-- Survey Embed -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200">
-                <!-- TODO: Replace with actual SurveyIQ iframe embed -->
-                <iframe 
-                    src="@(Configuration["SurveyIQ:SurveyEmbedUrl"])" 
-                    width="100%" 
-                    height="600" 
-                    frameborder="0" 
-                    class="rounded-xl">
-                </iframe>
+                <div class="bg-white border-l-4 border-[#005b8b] p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 mb-2">40%+ Response Rates</h3>
+                    <p class="text-gray-600">One-tap mobile surveys that guests actually complete. 20x better than traditional methods.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Rest of sections omitted for brevity - see full file -->
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">25+ Years of Casino Marketing Expertise</h2>
+                <p class="text-xl text-gray-600 mb-6">
+                    Since 2000, Strategy9 has been building enterprise marketing technology exclusively for the casino and hospitality industry.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    We're not a generic SaaS company that dabbles in casino tech. We live and breathe this industry. Our team has deep expertise in:
+                </p>
+                <ul class="space-y-3 text-gray-600 mb-8">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-[#3eb3e6] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Casino management system integrations (IGT Advantage, Aristocrat Oasis, Konami SYNKROS)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-[#3eb3e6] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>SOC2 Type 1 certified security and compliance</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-[#3eb3e6] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Multi-property, multi-tenant architecture</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-[#3eb3e6] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Real-world casino marketing workflows and challenges</span>
+                    </li>
+                </ul>
+                <div class="bg-[#e8f6fc] border border-[#3eb3e6] rounded-lg p-6">
+                    <p class="text-[#005b8b] font-semibold">
+                        "We don't build software for casinos. We build software WITH casinos. Every feature is battle-tested across 70+ properties."
+                    </p>
+                </div>
+            </div>
+            <div>
+                <!-- TODO: Add company/team image -->
+                <div class="bg-gradient-to-br from-[#3eb3e6] to-[#005b8b] rounded-2xl p-12 text-white">
+                    <div class="space-y-8">
+                        <div class="border-b border-white/20 pb-6">
+                            <div class="text-5xl font-bold mb-2">70+</div>
+                            <div class="text-blue-100">Properties Served</div>
+                        </div>
+                        <div class="border-b border-white/20 pb-6">
+                            <div class="text-5xl font-bold mb-2">25+</div>
+                            <div class="text-blue-100">Years in Business</div>
+                        </div>
+                        <div class="border-b border-white/20 pb-6">
+                            <div class="text-5xl font-bold mb-2">99.9%</div>
+                            <div class="text-blue-100">Uptime SLA</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-bold mb-2">SOC2</div>
+                            <div class="text-blue-100">Type 1 Certified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-16 bg-gradient-to-r from-[#3eb3e6] to-[#005b8b]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-white mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Connected with Strategy9</h2>
+            <p class="text-xl text-blue-100">Get casino marketing insights, product updates, and industry news delivered to your inbox.</p>
+        </div>
+
+        <div x-data="newsletterForm()" class="bg-white rounded-xl p-8 shadow-xl">
+            <form x-on:submit.prevent="submitNewsletter" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                        <input type="text" x-model="firstName" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                        <input type="text" x-model="lastName" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                    <input type="email" x-model="email" required 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent">
+                </div>
+                
+                <button type="submit" x-bind:disabled="submitting"
+                        class="w-full bg-[#ff6b35] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#e55a28] disabled:opacity-50 disabled:cursor-not-allowed">
+                    <span x-show="!submitting">Subscribe to Newsletter</span>
+                    <span x-show="submitting">Subscribing...</span>
+                </button>
+
+                <div x-show="message" x-cloak class="mt-4 p-4 rounded-lg" 
+                     x-bind:class="success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'">
+                    <p x-text="message"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Let's Talk About Your Property</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Ready to see how Strategy9 can transform your casino marketing? Get in touch with our team.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+                
+                <div x-data="contactForm()">
+                    <form x-on:submit.prevent="submitContact" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" x-model="name" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" x-model="email" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Property Name</label>
+                            <input type="text" x-model="property" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea x-model="message" required rows="4"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" x-bind:disabled="submitting"
+                                class="w-full bg-[#ff6b35] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#e55a28] disabled:opacity-50 disabled:cursor-not-allowed">
+                            <span x-show="!submitting">Send Message</span>
+                            <span x-show="submitting">Sending...</span>
+                        </button>
+
+                        <div x-show="responseMessage" x-cloak class="mt-4 p-4 rounded-lg" 
+                             x-bind:class="success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'">
+                            <p x-text="responseMessage"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <div class="bg-gradient-to-br from-[#3eb3e6] to-[#005b8b] rounded-xl p-8 text-white mb-6">
+                    <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <div>
+                                <div class="font-semibold mb-1">Email</div>
+                                <a href="mailto:sales@strategy9.com" class="text-blue-100 hover:text-white">sales@@strategy9.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <div>
+                                <div class="font-semibold mb-1">Phone</div>
+                                <a href="tel:1-855-838-3999" class="text-blue-100 hover:text-white">1-855-838-3999</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div>
+                                <div class="font-semibold mb-1">Business Hours</div>
+                                <p class="text-blue-100">Monday - Friday: 9am - 5pm PST</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Why Casino Properties Choose Strategy9</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#3eb3e6] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Seamless integration with existing casino systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#3eb3e6] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Dedicated support from casino marketing experts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#3eb3e6] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Enterprise-grade security and compliance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#3eb3e6] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Proven results across 70+ properties</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 @section Scripts {
     <script>
-        // Newsletter and Contact form JavaScript
+        // SurveyIQ Configuration
+        const SURVEY_BASE_URL = 'https://default.surveyiq.com';
+        const SURVEY_ID = '71';
+        const SURVEY_PUBLIC_ID = 'DBD4CFF8-DEFF-4879-8E81-2393F5FCB0A2';
+        const SURVEY_SHORTCODE = 'qq8owi';
+
+        // Survey Response Tracking
+        async function getSurveyStatistics() {
+            try {
+                // Call SurveyIQ API directly (same as G2E site)
+                const url = `${SURVEY_BASE_URL}/api/services/app/Survey/GetPublicStatistics?publicId=${SURVEY_PUBLIC_ID}`;
+                
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    mode: 'cors',
+                    credentials: 'omit'
+                });
+
+                const text = await response.text();
+                
+                if (!text) {
+                    throw new Error('Empty response from server');
+                }
+
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (e) {
+                    throw new Error('Invalid JSON response');
+                }
+
+                const stats = data.result || data;
+                
+                if (!stats || typeof stats !== 'object') {
+                    throw new Error('No valid data in response');
+                }
+
+                return {
+                    surveyTitle: stats.surveyTitle || 'Casino Marketing Challenges',
+                    questionText: stats.questionText || 'What\'s your biggest challenge in casino marketing right now?',
+                    totalResponses: stats.totalResponses || 0,
+                    answerOptions: stats.answerOptions || []
+                };
+
+            } catch (error) {
+                console.error('API Error:', error);
+                // Return fallback data structure
+                return {
+                    surveyTitle: 'Casino Marketing Challenges',
+                    questionText: 'What\'s your biggest challenge in casino marketing right now?',
+                    totalResponses: 0,
+                    answerOptions: []
+                };
+            }
+        }
+
+        async function trackSurveyResponse(value, answer, event) {
+            event.preventDefault();
+
+            // Hide survey buttons
+            document.getElementById('surveyButtons').style.display = 'none';
+
+            // Show loading state
+            document.getElementById('surveyResults').style.display = 'block';
+            document.getElementById('resultsChart').innerHTML = '<div class="text-center py-8"><div class="text-[#3eb3e6] text-lg">Loading live results...</div></div>';
+
+            // Submit the actual survey response
+            const actualUrl = event.target.href;
+            fetch(actualUrl, {
+                method: 'GET',
+                mode: 'no-cors'
+            }).then(() => {
+                console.log('Survey response submitted to SurveyIQ');
+            }).catch(err => {
+                console.log('Submission may still have worked:', err);
+            });
+
+            // Wait a moment for the response to register, then fetch real results
+            setTimeout(async () => {
+                try {
+                    const stats = await getSurveyStatistics();
+                    displayRealResults(stats, answer);
+                } catch (error) {
+                    console.error('Error fetching results:', error);
+                    // Fallback to simple confirmation
+                    displayFallbackResults(answer);
+                }
+            }, 1500);
+        }
+
+        function displayRealResults(stats, userAnswer) {
+            const resultsContainer = document.getElementById('resultsChart');
+            
+            let resultsHTML = `
+                <div class="space-y-4">
+                    <p class="text-center text-gray-600 mb-6">
+                        <strong class="text-2xl text-[#3eb3e6]">${stats.totalResponses || 1}</strong> casino marketing professionals have responded
+                    </p>
+            `;
+
+            // If we have real data from the API
+            if (stats.answerOptions && stats.answerOptions.length > 0) {
+                // Sort by percentage
+                const sortedResults = [...stats.answerOptions].sort((a, b) => b.percentage - a.percentage);
+                
+                sortedResults.forEach(option => {
+                    const isSelected = option.text === userAnswer || option.text.includes(userAnswer);
+                    
+                    resultsHTML += `
+                        <div class="relative ${isSelected ? 'ring-2 ring-[#3eb3e6] rounded-lg' : ''}">
+                            <div class="bg-gray-200 rounded-lg h-12 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-gradient-to-r from-[#3eb3e6] to-[#005b8b] transition-all duration-1000" 
+                                     style="width: ${option.percentage}%;"></div>
+                                <div class="absolute inset-0 flex items-center justify-between px-4">
+                                    <span class="font-semibold text-gray-900 relative z-10">${option.text}</span>
+                                    <span class="font-bold text-[#005b8b] relative z-10">${option.percentage}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                // Fallback if no data - show just the user's response
+                displayFallbackResults(userAnswer);
+                return;
+            }
+
+            resultsHTML += `
+                </div>
+                <div class="mt-8 p-4 bg-[#e8f6fc] border border-[#3eb3e6] rounded-lg">
+                    <p class="text-[#005b8b] font-semibold text-center">You selected: "${userAnswer}"</p>
+                    <p class="text-[#005b8b] text-sm text-center mt-1">Your response has been recorded - this is live SurveyIQ data!</p>
+                </div>
+            `;
+
+            resultsContainer.innerHTML = resultsHTML;
+
+            // Animate the result bars
+            setTimeout(() => {
+                const bars = resultsContainer.querySelectorAll('[style*="width"]');
+                bars.forEach((bar) => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }, 100);
+        }
+
+        function displayFallbackResults(userAnswer) {
+            const resultsContainer = document.getElementById('resultsChart');
+            
+            const resultsHTML = `
+                <div class="text-center py-8">
+                    <div class="text-6xl mb-4">✅</div>
+                    <h3 class="text-2xl font-bold text-[#3eb3e6] mb-2">Thank You!</h3>
+                    <p class="text-gray-600 mb-4">Your response has been recorded</p>
+                    <div class="bg-[#e8f6fc] border border-[#3eb3e6] rounded-lg p-6 max-w-md mx-auto">
+                        <p class="text-[#005b8b] font-semibold">You selected:</p>
+                        <p class="text-xl text-[#3eb3e6] font-bold mt-2">"${userAnswer}"</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-6">
+                        This is SurveyIQ in action - instant response capture with real-time analytics
+                    </p>
+                </div>
+            `;
+            
+            resultsContainer.innerHTML = resultsHTML;
+        }
+        
+        // Newsletter form Alpine.js component
         function newsletterForm() {
             return {
                 firstName: '',
@@ -249,6 +717,7 @@
             };
         }
         
+        // Contact form Alpine.js component
         function contactForm() {
             return {
                 name: '',
@@ -261,12 +730,13 @@
                 async submitContact() {
                     this.submitting = true;
                     this.responseMessage = '';
-                    
+    
                     try {
                         const response = await fetch('/Home/Contact', {
                             method: 'POST',
                             headers: {
-                                'Content-Type': 'application/json'
+                                'Content-Type': 'application/json',
+                                'RequestVerificationToken': '@Antiforgery.GetAndStoreTokens(Context).RequestToken'
                             },
                             body: JSON.stringify({
                                 name: this.name,
