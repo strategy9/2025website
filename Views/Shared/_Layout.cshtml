@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Strategy9 | Casino Marketing Technology Experts</title>
+    <meta name="description" content="Strategy9 provides enterprise casino marketing technology solutions including PlayerIQ, EmailIQ, SurveyIQ, WiFiIQ, and RaffleIQ. SOC2 certified and trusted by 70+ properties.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        [x-cloak] { display: none !important; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="antialiased bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="text-2xl font-bold text-gray-900">
+                        <!-- TODO: Replace with real Strategy9 logo -->
+                        <span class="text-indigo-600">Strategy9</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#products" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Products</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700">Contact Us</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @@click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-gray-900">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="mobileMenuOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Home</a>
+                <a href="#products" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Products</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">About</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-white bg-indigo-600 rounded-lg">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold text-white mb-4">Strategy9</div>
+                    <p class="text-gray-400 text-sm">Casino marketing technology experts since 2000. SOC2 Type 1 certified.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://pwa.playeriq.com" target="_blank" rel="noopener" class="hover:text-white">PlayerIQ</a></li>
+                        <li><a href="https://www.emailiq.ca" target="_blank" rel="noopener" class="hover:text-white">EmailIQ</a></li>
+                        <li><a href="https://www.surveyiq.com" target="_blank" rel="noopener" class="hover:text-white">SurveyIQ</a></li>
+                        <li><a href="https://www.wifiiq.net" target="_blank" rel="noopener" class="hover:text-white">WiFiIQ</a></li>
+                        <li><a href="https://www.raffleiq.us" target="_blank" rel="noopener" class="hover:text-white">RaffleIQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-white">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>sales@@strategy9.com</li>
+                        <li>1-855-838-3999</li>
+                        <li class="pt-4">
+                            <!-- TODO: Replace with real SOC2 badge -->
+                            <div class="text-xs text-gray-400">SOC2 Type 1 Certified</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; @DateTime.Now.Year Strategy9. All rights reserved. Serving the casino and hospitality industry since 2000.</p>
+            </div>
+        </div>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
