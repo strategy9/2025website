@@ -1,6 +1,25 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY7V1P1FN6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YY7V1P1FN6');
+    </script>
+    <script>
+        window.intercomSettings = {
+            app_id: "o3m37fnt"
+        };
+    </script>
+
+    <script>
+        // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/o3m37fnt'
+        (function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', w.intercomSettings); } else { var d = document; var i = function () { i.c(arguments); }; i.q = []; i.c = function (args) { i.q.push(args); }; w.Intercom = i; var l = function () { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/o3m37fnt'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); }; if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Strategy9 | Casino Marketing Technology Experts</title>
@@ -27,10 +46,8 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="/" class="text-2xl font-bold text-gray-900">
-                        <!-- TODO: Replace with real Strategy9 logo -->
-                        <img src="~/images/s9_540w.png" style="width: 250px;" />
-                        @*                         <span class="text-[#3eb3e6]">Strategy9</span>
- *@                    </a>
+                        <img src="~/images/s9_540w.png" style="width: 200px;" alt="Strategy9 Logo" />
+                    </a>
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -38,6 +55,7 @@
                     <a href="#home" class="text-gray-700 hover:text-[#3eb3e6] px-3 py-2 text-sm font-medium">Home</a>
                     <a href="#products" class="text-gray-700 hover:text-[#3eb3e6] px-3 py-2 text-sm font-medium">Products</a>
                     <a href="#about" class="text-gray-700 hover:text-[#3eb3e6] px-3 py-2 text-sm font-medium">About</a>
+                    <a href="/Home/Support" class="text-gray-700 hover:text-[#3eb3e6] px-3 py-2 text-sm font-medium">Support</a>
                     <a href="#contact" class="bg-[#ff6b35] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#e55a28]">Contact Us</a>
                 </div>
 
@@ -59,6 +77,7 @@
                 <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Home</a>
                 <a href="#products" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Products</a>
                 <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">About</a>
+                <a href="/Home/Support" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Support</a>
                 <a href="#contact" class="block px-3 py-2 text-base font-medium text-white bg-[#ff6b35] rounded-lg">Contact Us</a>
             </div>
         </div>
@@ -66,13 +85,187 @@
 
     @RenderBody()
 
+    <!-- Black Friday Modal -->
+    <div x-data="{ 
+        showModal: false,
+        init() {
+            // Only show if not dismissed in this session
+            if (!sessionStorage.getItem('blackFridayDismissed')) {
+                setTimeout(() => { this.showModal = true; }, 2000);
+            }
+        },
+        closeModal() {
+            this.showModal = false;
+            sessionStorage.setItem('blackFridayDismissed', 'true');
+        }
+    }" 
+    x-show="showModal"
+    x-cloak
+    class="fixed inset-0 z-50 overflow-y-auto"
+    style="display: none;">
+        
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-black bg-opacity-75 transition-opacity" @@click="closeModal()"></div>
+
+        <!-- Modal Content -->
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div @@click.away="closeModal()" 
+                 x-show="showModal"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 transform scale-90"
+                 x-transition:enter-end="opacity-100 transform scale-100"
+                 class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden">
+                
+                <!-- Close Button -->
+                <button @@click="closeModal()" 
+                        class="absolute top-4 right-4 z-10 text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+
+                <!-- Red Banner Header -->
+                <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 px-6 text-center">
+                    <div class="flex items-center justify-center space-x-3">
+                        <svg class="w-6 h-6 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="font-bold text-lg tracking-wider uppercase">Black Friday / Cyber Monday</span>
+                        <svg class="w-6 h-6 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="p-8">
+                    <!-- Big Promo Text -->
+                    <div class="text-center mb-6">
+                        <div class="inline-block bg-yellow-400 text-black font-black text-5xl px-6 py-3 rounded-lg transform -rotate-2 shadow-lg mb-4">
+                            BUY 1, GET 1 FREE!
+                        </div>
+                        <div class="text-gray-600 text-sm mt-2 italic">
+                            *Okay, we admit it... we're not Best Buy. But this deal is still pretty great! 😏
+                        </div>
+                    </div>
+
+                    <!-- Offer Details -->
+                    <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">
+                            Here's the Deal:
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <!-- EmailIQ Offer -->
+                            <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border-2 border-[#3eb3e6]">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-gray-900 font-semibold">
+                                        Buy <span class="text-[#3eb3e6]">EmailIQ</span> → Get <span class="text-[#3eb3e6]">SurveyIQ FREE</span>
+                                    </p>
+                                    <p class="text-sm text-gray-600 mt-1">
+                                        Perfect combo: Send campaigns, measure results. What your CMO dreams are made of.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- PlayerIQ Offer -->
+                            <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border-2 border-[#3eb3e6]">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-gray-900 font-semibold">
+                                        Buy <span class="text-[#3eb3e6]">PlayerIQ</span> → Get <span class="text-[#3eb3e6]">SurveyIQ FREE</span>
+                                    </p>
+                                    <p class="text-sm text-gray-600 mt-1">
+                                        Engage guests with the PWA, then ask what they thought. Revolutionary, we know.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Both Products Offer -->
+                            <div class="flex items-start space-x-3 bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-lg border-2 border-yellow-400">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-gray-900 font-semibold">
+                                        Buy <span class="text-[#ff6b35]">BOTH</span> → Get SurveyIQ AND WifiIQ FREE
+                                    </p>
+                                    <p class="text-sm text-gray-600 mt-1">
+                                        Now you're just showing off. But we like your style. 🎯
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fine Print (But Cheeky) -->
+                    <div class="bg-blue-50 border-l-4 border-[#3eb3e6] p-4 mb-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <svg class="h-5 w-5 text-[#3eb3e6]" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-700">
+                                    <strong>The Real Talk:</strong> SurveyIQ normally costs $299/month. We're literally giving you $3,588/year in software (WiFiIQ is a bit more...) 
+                                    This offer is valid through December 2, 2025, because that's when our CFO realizes what we've done.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" 
+                           @@click="closeModal()"
+                           class="flex-1 bg-[#ff6b35] text-white text-center font-bold py-4 px-6 rounded-lg hover:bg-[#e55a28] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+                            🔥 I Want This Deal!
+                        </a>
+                        <button @@click="closeModal()" 
+                                class="flex-1 bg-gray-200 text-gray-700 font-semibold py-4 px-6 rounded-lg hover:bg-gray-300 transition-colors">
+                            I Hate Saving Money
+                        </button>
+                    </div>
+
+                    <!-- Trust Signals -->
+                    <div class="mt-6 text-center text-sm text-gray-500">
+                        <p>✓ SOC2 Certified  •  ✓ 25+ Years in Business  •  ✓ 70+ Properties Trust Us</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Map Section -->
+            <div class="mb-8 rounded-lg overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.6677366928411!2d-115.28702973035041!3d36.10062308186904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c76275ba7e99%3A0x33d7174325c46f2d!2sStrategy9!5e1!3m2!1sen!2sus!4v1763594185626!5m2!1sen!2sus" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="text-2xl font-bold text-white mb-4">Strategy9</div>
                     <p class="text-gray-400 text-sm">Casino marketing technology experts since 2000. SOC2 Type 1 certified.</p>
+                    <p class="pt-2">
+                        <div class="text-xs text-gray-400">
+                            <img src="~/images/soc2.png" width="60" alt="SOC2 Certified" />
+                        </div>
+                    </p>
                 </div>
 
                 <div>
@@ -90,28 +283,50 @@
                     <h4 class="text-white font-semibold mb-4">Company</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#about" class="hover:text-white">About Us</a></li>
+                        <li><a href="/Home/Support" class="hover:text-white">Support</a></li>
                         <li><a href="#contact" class="hover:text-white">Contact</a></li>
-                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="/Home/Privacy" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="/Home/TermsOfService" class="hover:text-white">Terms of Service</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li>sales@@strategy9.com</li>
-                        <li>1-855-838-3999</li>
-                        <li class="pt-4">
-                            <!-- TODO: Replace with real SOC2 badge -->
-                            <div class="text-xs text-gray-400">SOC2 Type 1 Certified</div>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#3eb3e6] mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <a href="https://maps.google.com/?q=8910+W+Tropicana+Ave+Suite+4+Las+Vegas+NV+89147" target="_blank" rel="noopener" class="hover:text-white">
+                                8910 W Tropicana Ave, Suite 4<br />
+                                Las Vegas, NV 89147
+                            </a>
                         </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#3eb3e6] mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:sales@strategy9.com" class="hover:text-white">sales@strategy9.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-[#3eb3e6] mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <a href="tel:1-855-838-3999" class="hover:text-white">1-855-838-3999</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
 
             <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
                 <p>&copy; @DateTime.Now.Year Strategy9. All rights reserved. Serving the casino and hospitality industry since 2000.</p>
-            </div>
+                <p class="mt-2 text-xs">
+                    Strategy9®, PlayerIQ®, EmployeeIQ®, ValetIQ®, TableIQ®, SwipeIQ®, and AppendIQ® 
+                    are registered trademarks of Strategy9, Inc. in the United States.
+                </p>
+			</div>
         </div>
     </footer>
 

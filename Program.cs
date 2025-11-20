@@ -6,7 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddControllersWithViews();
+
+// Register JiraService with HttpClient
+builder.Services.AddHttpClient<Strategy9Website.Services.JiraService>();
+
 builder.Services.AddHttpClient();
+
+builder.Services.AddRazorPages();
 
 // Register EmailIQ Service
 builder.Services.AddScoped<IEmailIQService, EmailIQService>();
@@ -28,6 +34,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",

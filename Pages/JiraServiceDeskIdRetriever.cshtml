@@ -1,0 +1,221 @@
+﻿@page
+@{
+    ViewData["Title"] = "Jira Service Desk ID Retriever";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto p-8">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-6">Jira Service Desk ID Retriever</h1>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                <p class="text-blue-800">
+                    <strong>Instructions:</strong> Enter your Atlassian credentials to retrieve your Service Desk and Request Type IDs.
+                    These IDs are needed to configure the API integration.
+                </p>
+            </div>
+
+            <!-- API Token Instructions -->
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                <h3 class="font-semibold text-yellow-900 mb-2">🔑 Get Your API Token:</h3>
+                <ol class="list-decimal list-inside space-y-1 text-yellow-800 text-sm">
+                    <li>Go to <a href="https://id.atlassian.com/manage-profile/security/api-tokens" target="_blank" class="text-blue-600 hover:underline">https://id.atlassian.com/manage-profile/security/api-tokens</a></li>
+                    <li>Click "Create API token"</li>
+                    <li>Give it a label like "Strategy9 Website"</li>
+                    <li>Copy the token and paste it below</li>
+                </ol>
+            </div>
+
+            <form id="jiraForm" class="space-y-4 mb-8">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Your Atlassian Email</label>
+                    <input type="email" id="email" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           placeholder="your-email@strategy9.com">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">API Token</label>
+                    <input type="password" id="apiToken" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           placeholder="Your API token from id.atlassian.com">
+                    <p class="text-xs text-gray-500 mt-1">This is processed securely on the backend and not stored</p>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Atlassian Domain</label>
+                    <input type="text" id="domain" value="strategy9" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <p class="text-xs text-gray-500 mt-1">Just the subdomain (e.g., "strategy9" from strategy9.atlassian.net)</p>
+                </div>
+
+                <button type="submit"
+                        class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700">
+                    Retrieve IDs
+                </button>
+            </form>
+
+            <!-- Loading State -->
+            <div id="loading" style="display: none;" class="text-center py-8">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                <p class="text-gray-600 mt-4">Connecting to Jira...</p>
+            </div>
+
+            <!-- Error Display -->
+            <div id="error" style="display: none;" class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                <h3 class="font-semibold text-red-900 mb-2">❌ Error</h3>
+                <p id="errorMessage" class="text-red-800"></p>
+            </div>
+
+            <!-- Results Display -->
+            <div id="results" style="display: none;">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">📋 Your Jira Service Desk Configuration</h2>
+
+                <!-- Service Desks -->
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-green-900 mb-4">Service Desks Found:</h3>
+                    <div id="serviceDesks" class="space-y-4"></div>
+                </div>
+
+                <!-- Copy Config Section -->
+                <div class="bg-gray-50 border border-gray-300 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">📝 Add to appsettings.json:</h3>
+                    <pre id="configJson" class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto text-sm"></pre>
+                    <button onclick="copyConfig()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Copy Configuration
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('jiraForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const apiToken = document.getElementById('apiToken').value;
+            const domain = document.getElementById('domain').value;
+
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+
+            try {
+                // Call backend proxy to avoid CORS issues
+                console.log('Fetching Jira configuration...');
+                const response = await fetch('/Home/GetJiraIds', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        apiToken: apiToken,
+                        domain: domain
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!data.success) {
+                    throw new Error(data.message || 'Failed to retrieve Jira configuration');
+                }
+
+                if (!data.results || data.results.length === 0) {
+                    throw new Error('No service desks found in your Jira instance');
+                }
+
+                // Display results
+                displayResults(data.results, data.domain);
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('results').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('errorMessage').textContent = error.message;
+            }
+        });
+
+        function displayResults(results, domain) {
+            const serviceDeskDiv = document.getElementById('serviceDesks');
+            serviceDeskDiv.innerHTML = '';
+
+            let configObj = {
+                Jira: {
+                    AtlassianDomain: `${domain}.atlassian.net`,
+                    ServiceDeskId: "",
+                    RequestTypeId: "",
+                    Email: "",
+                    ApiToken: ""
+                }
+            };
+
+            results.forEach(result => {
+                const sd = result.serviceDesk;
+                const div = document.createElement('div');
+                div.className = 'bg-white rounded-lg p-4 border border-green-300';
+
+                let html = `
+                    <h4 class="font-bold text-gray-900 mb-2">📁 ${sd.projectName}</h4>
+                    <p class="text-sm text-gray-600 mb-3">Service Desk ID: <span class="font-mono bg-gray-100 px-2 py-1 rounded">${sd.id}</span></p>
+                    <h5 class="font-semibold text-gray-800 mb-2">Request Types:</h5>
+                    <ul class="space-y-2">
+                `;
+
+                result.requestTypes.forEach(rt => {
+                    html += `
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">▸</span>
+                            <div>
+                                <span class="font-medium text-gray-900">${rt.name}</span>
+                                <span class="text-xs text-gray-500 ml-2">ID: <span class="font-mono bg-gray-100 px-1 rounded">${rt.id}</span></span>
+                                ${rt.description ? `<p class="text-xs text-gray-600 mt-1">${rt.description}</p>` : ''}
+                            </div>
+                        </li>
+                    `;
+                });
+
+                html += `</ul>`;
+                div.innerHTML = html;
+                serviceDeskDiv.appendChild(div);
+
+                // Use first service desk and first request type for config
+                if (configObj.Jira.ServiceDeskId === "") {
+                    configObj.Jira.ServiceDeskId = sd.id;
+                    if (result.requestTypes.length > 0) {
+                        configObj.Jira.RequestTypeId = result.requestTypes[0].id;
+                    }
+                }
+            });
+
+            // Display config JSON
+            document.getElementById('configJson').textContent = JSON.stringify(configObj, null, 2);
+            window.currentConfig = JSON.stringify(configObj, null, 2);
+        }
+
+        function copyConfig() {
+            const configText = window.currentConfig;
+            navigator.clipboard.writeText(configText).then(() => {
+                alert('Configuration copied to clipboard!');
+            }).catch(err => {
+                console.error('Could not copy:', err);
+                alert('Could not copy to clipboard. Please copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>
