@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="~/css/site.css" rel="stylesheet" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY7V1P1FN6"></script>
     <script>
@@ -39,8 +40,33 @@
     </style>
 </head>
 <body class="antialiased bg-gray-50">
+    <!-- PlayerIQ App Announcement Bar -->
+    <div class="bg-gradient-to-r from-[#3eb3e6] via-[#2a8fc9] to-[#005b8b] text-white text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between py-2 gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10">
+                    🚀
+                </span>
+                <p class="font-medium">
+                    NEW: PlayerIQ PWA — fully branded guest app, no app store approvals, no developers.
+                </p>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="#playeriq-app"
+                   class="inline-flex items-center px-3 py-1 rounded-full bg-white text-xs font-semibold text-[#005b8b] hover:bg-gray-100 shadow-sm">
+                    See the PlayerIQ App
+                </a>
+                <a href="#contact"
+                   class="hidden sm:inline-flex items-center px-3 py-1 rounded-full border border-white/50 text-xs font-semibold hover:bg-white/10">
+                    Book a 20-minute walkthrough
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="bg-white shadow-sm fixed w-full z-50" x-data="{ mobileMenuOpen: false }">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -53,11 +79,13 @@
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex md:items-center md:space-x-8">
                     <a href="#home" class="text-gray-700 hover:text-[#3eb3e6] px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="/PlayerIQApp" class="text-gray-700 hover:text-[#3eb3e6] px-3 py-2 text-sm font-medium">PlayerIQ App</a>
                     <a href="#products" class="text-gray-700 hover:text-[#3eb3e6] px-3 py-2 text-sm font-medium">Products</a>
                     <a href="#about" class="text-gray-700 hover:text-[#3eb3e6] px-3 py-2 text-sm font-medium">About</a>
                     <a href="/Home/Support" class="text-gray-700 hover:text-[#3eb3e6] px-3 py-2 text-sm font-medium">Support</a>
-                    <a href="#contact" class="bg-[#ff6b35] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#e55a28]">Contact Us</a>
+                    <a href="/#contact" class="bg-[#ff6b35] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#e55a28]">Contact Us</a>
                 </div>
+
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
@@ -75,15 +103,201 @@
         <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-white border-t border-gray-200">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Home</a>
+                <a href="/PlayerIQApp" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">PlayerIQ App</a>
                 <a href="#products" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Products</a>
                 <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">About</a>
                 <a href="/Home/Support" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Support</a>
-                <a href="#contact" class="block px-3 py-2 text-base font-medium text-white bg-[#ff6b35] rounded-lg">Contact Us</a>
+                <a href="/#contact" class="block px-3 py-2 text-base font-medium text-white bg-[#ff6b35] rounded-lg">Contact Us</a>
             </div>
         </div>
+
     </nav>
 
     @RenderBody()
+
+    @RenderBody()
+
+    <!-- PlayerIQ App Spotlight Modal -->
+    <div x-data="{
+         showModal: false,
+         init() {
+         // Only show once per session
+         if (!sessionStorage.getItem('playerIqAppModalDismissed')) {
+         setTimeout(()=>
+        { this.showModal = true; }, 3500);
+        }
+        },
+        closeModal() {
+        this.showModal = false;
+        sessionStorage.setItem('playerIqAppModalDismissed', 'true');
+        }
+        }"
+        x-init="init()"
+        x-show="showModal"
+        x-cloak
+        class="fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-black/70 backdrop-blur-sm" @@click="closeModal()"></div>
+
+        <!-- Modal Content -->
+        <div @@click.away="closeModal()"
+             x-show="showModal"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 translate-y-6 scale-95"
+             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+             x-transition:leave-end="opacity-0 translate-y-4 scale-95"
+             class="relative max-w-5xl w-full bg-gradient-to-br from-gray-900 via-gray-950 to-black rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+
+            <!-- Close Button -->
+            <button @@click="closeModal()"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-200 transition-colors z-20">
+                <span class="sr-only">Close</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <!-- Accent Glow -->
+            <div class="pointer-events-none absolute -top-32 -right-16 w-72 h-72 bg-[#3eb3e6]/40 rounded-full blur-3xl opacity-70"></div>
+            <div class="pointer-events-none absolute -bottom-32 -left-16 w-72 h-72 bg-[#ff6b35]/30 rounded-full blur-3xl opacity-70"></div>
+
+            <div class="relative grid md:grid-cols-2 gap-0">
+                <!-- Left: Content -->
+                <div class="p-8 sm:p-10 lg:p-12 text-white flex flex-col justify-center">
+                    <div class="inline-flex items-center mb-5">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-400/40 tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+                            NEW • PlayerIQ PWA
+                        </span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                        Your guest app.<br class="hidden sm:block" />
+                        <span class="text-[#d4af37]">No app store required.</span>
+                    </h2>
+
+                    <p class="text-gray-300 text-sm sm:text-base mb-5">
+                        A fully branded, casino-grade web app that you control from the PlayerIQ admin.
+                        Update menus, offers, queues, games, and messaging in seconds — without waiting on
+                        developers, IT, or Apple/Google approvals.
+                    </p>
+
+                    <ul class="space-y-3 text-sm text-gray-200 mb-7">
+                        <li class="flex items-start">
+                            <span class="mt-1 mr-2">
+                                <svg class="w-5 h-5 text-[#3eb3e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span><strong>Instant updates:</strong> Change almost everything from PlayerIQ — branding, content, offers, queues, and more.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mt-1 mr-2">
+                                <svg class="w-5 h-5 text-[#3eb3e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M3 7h18M3 12h10M3 17h6" />
+                                </svg>
+                            </span>
+                            <span><strong>No app/play stores:</strong> No approvals, no releases, no “we’re waiting on Apple.” Just ship.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mt-1 mr-2">
+                                <svg class="w-5 h-5 text-[#3eb3e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </span>
+                            <span><strong>Hook them with games:</strong> Wordle-style daily games, offers, and queues keep guests checking in even when they’re not on-property.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mt-1 mr-2">
+                                <svg class="w-5 h-5 text-[#3eb3e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </span>
+                            <span><strong>Built for casinos & restaurants:</strong> Queues, offers, comps, events, and messaging all tied back into PlayerIQ.</span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                        <a href="https://pwa.playeriq.com"
+                           target="_blank"
+                           rel="noopener"
+                           @@click="closeModal()"
+                           class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-[#ff6b35] text-sm sm:text-base font-semibold text-white shadow-lg shadow-[#ff6b35]/40 hover:bg-[#e55a28] transition-all">
+                            🚀 See the PlayerIQ App
+                        </a>
+                        <a href="#contact"
+                           @@click="closeModal()"
+                           class="inline-flex justify-center items-center px-6 py-3 rounded-xl border border-white/30 text-sm sm:text-base font-semibold text-gray-100 hover:bg-white/5 transition-all">
+                            Book a 20-minute walkthrough
+                        </a>
+                    </div>
+
+                    <p class="mt-4 text-[11px] sm:text-xs text-gray-400">
+                        Already trusted by 70+ properties. SOC2 Type 1 certified. No “version 1.0 coming soon” — this is live today.
+                    </p>
+                </div>
+
+                <!-- Right: Phone Mock / Visual -->
+                <div class="hidden md:flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-10">
+                    <div class="relative">
+                        <!-- Glow behind phone -->
+                        <div class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-[#3eb3e6] via-[#d4af37] to-[#ff6b35] opacity-70 blur-xl"></div>
+
+                        <!-- Phone frame -->
+                        <div class="relative bg-black rounded-[2.5rem] p-2 shadow-2xl border border-gray-700/70">
+                            <div class="bg-black rounded-[2.2rem] overflow-hidden w-[280px]">
+                                <!-- Faux status bar -->
+                                <div class="h-7 flex items-center justify-center bg-black">
+                                    <div class="w-20 h-5 bg-gray-900 rounded-full"></div>
+                                </div>
+                                <!-- Screenshot -->
+                                <img src="~/images/AppHome2.PNG"
+                                     alt="PlayerIQ PWA guest experience"
+                                     class="w-full"
+                                     style="margin-top:-20px;" />
+                            </div>
+                        </div>
+
+                        <!-- Floating tag 1 -->
+                        <div class="absolute -right-3 top-10 bg-white rounded-xl shadow-xl px-3 py-2 text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100">
+                                    <span class="text-emerald-600 text-base">✓</span>
+                                </span>
+                                <div>
+                                    <div class="font-semibold text-gray-900 leading-tight">Queue joined</div>
+                                    <div class="text-[11px] text-gray-500">We’ll text you when you’re up.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating tag 2 -->
+                        <div class="absolute -left-4 bottom-10 bg-white rounded-xl shadow-xl px-3 py-2 text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#d4af37]/15">
+                                    <svg class="w-4 h-4 text-[#d4af37]" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div class="font-semibold text-gray-900 leading-tight">Daily game unlocked</div>
+                                    <div class="text-[11px] text-gray-500">Wordle-style fun, casino-style rewards.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /Right -->
+            </div>
+        </div>
+    </div>
 
 
     <!-- Footer -->
@@ -122,7 +336,7 @@
                     <ul class="space-y-2 text-sm">
                         <li><a href="#about" class="hover:text-white">About Us</a></li>
                         <li><a href="/Home/Support" class="hover:text-white">Support</a></li>
-                        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+                        <li><a href="/#contact" class="hover:text-white">Contact</a></li>
                         <li><a href="/Home/Privacy" class="hover:text-white">Privacy Policy</a></li>
                         <li><a href="/Home/TermsOfService" class="hover:text-white">Terms of Service</a></li>
                     </ul>

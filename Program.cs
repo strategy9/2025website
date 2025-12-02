@@ -1,4 +1,4 @@
-using Strategy9Website.Services;
+﻿using Strategy9Website.Services;
 using Microsoft.EntityFrameworkCore;
 using Strategy9Website.Data;
 
@@ -35,6 +35,13 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 app.MapRazorPages();
+
+// 👇 Add this custom route BEFORE the default route
+app.MapControllerRoute(
+    name: "playeriqapp",
+    pattern: "PlayerIQApp",
+    defaults: new { controller = "Home", action = "PlayerIQApp" }
+);
 
 app.MapControllerRoute(
     name: "default",

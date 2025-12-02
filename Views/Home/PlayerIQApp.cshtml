@@ -1,0 +1,723 @@
+﻿@{
+    ViewData["Title"] = "PlayerIQ App";
+}
+
+<!-- Hero Section -->
+<section id="playeriq-app" class="pt-24 pb-16 bg-gradient-to-br from-[#3eb3e6] via-[#2a8fc9] to-[#005b8b]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-white">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    The Complete Guest Experience Platform<br class="hidden lg:block" />
+                    for Casinos, Restaurants &amp; Hotels
+                </h1>
+                <p class="text-xl md:text-2xl mb-4 text-blue-100">
+                    Player Portal + Progressive Web App + Real-Time Marketing —
+                    all integrated, all live, all included.
+                </p>
+                <p class="text-sm md:text-base text-blue-100/90 mb-8">
+                    PlayerIQ connects your casino or hospitality property to every guest’s pocket:
+                    queues, offers, contests, reservations, and messaging — without waiting on
+                    app store approvals or development cycles.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#get-started"
+                       class="bg-white text-[#005b8b] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 text-center">
+                        Schedule Your Demo
+                    </a>
+                    <a href="#features"
+                       class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#005b8b] text-center">
+                        Explore Features
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="mt-10 grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-6 text-blue-100">
+                    <div>
+                        <div class="text-3xl font-bold text-white">25+</div>
+                        <div class="text-sm">Years of Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white">70+</div>
+                        <div class="text-sm">Casino &amp; Hospitality Properties</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white">SOC2</div>
+                        <div class="text-sm">Type 1 Certified</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white">30 Days</div>
+                        <div class="text-sm">Typical Implementation</div>
+                    </div>
+                </div>
+
+                <!-- Key Promise Strip -->
+                <div class="mt-8 bg-black/15 border border-white/20 rounded-2xl px-4 py-3 text-xs sm:text-sm flex flex-col sm:flex-row sm:items-center gap-2">
+                    <div class="font-semibold flex items-center gap-2">
+                        <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10">⚡</span>
+                        <span>No app store. No developers. No approvals.</span>
+                    </div>
+                    <span class="text-blue-100/80">
+                        Update branding, content, offers, queues, and games directly from the PlayerIQ admin.
+                    </span>
+                </div>
+            </div>
+
+            <!-- Hero Device Mockup -->
+            <div class="hidden md:flex justify-center lg:justify-end relative">
+                <div class="absolute -inset-10 bg-[#d4af37]/25 rounded-full blur-3xl opacity-80"></div>
+                <div class="relative bg-black rounded-[3rem] p-3 shadow-2xl border border-gray-800">
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden" style="width: 300px;">
+                        <!-- Status Bar Simulation -->
+                        <div class="bg-black h-8 flex items-center justify-center">
+                            <div class="w-20 h-6 bg-gray-900 rounded-full"></div>
+                        </div>
+                        <!-- Screenshot -->
+                        <img src="~/images/AppHome2.PNG"
+                             alt="PlayerIQ PWA - Guest Experience"
+                             class="w-full"
+                             style="margin-top:-32px;" />
+                    </div>
+                </div>
+
+                <!-- Floating Badge 1 -->
+                <div class="absolute -right-3 top-16 bg-white rounded-xl shadow-xl px-3 py-2 text-xs">
+                    <div class="flex items-center gap-2">
+                        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100">
+                            <span class="text-emerald-600 text-base">✓</span>
+                        </span>
+                        <div>
+                            <div class="font-semibold text-gray-900 leading-tight">Queue joined</div>
+                            <div class="text-[11px] text-gray-500">We’ll notify you when it’s your turn.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Badge 2 -->
+                <div class="absolute -left-4 bottom-16 bg-white rounded-xl shadow-xl px-3 py-2 text-xs">
+                    <div class="flex items-center gap-2">
+                        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#d4af37]/15">
+                            <svg class="w-4 h-4 text-[#d4af37]" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <div class="font-semibold text-gray-900 leading-tight">New offer unlocked</div>
+                            <div class="text-[11px] text-gray-500">Triple points tonight only.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Three-in-One Platform -->
+<section id="overview" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Three Powerful Solutions in One Platform
+            </h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Finally, a complete solution for the modern guest experience — from web portal to PWA to
+                real-time marketing, all powered by the same data.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Player Portal -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+                <div class="w-12 h-12 mb-4 rounded-xl bg-[#e8f6fc] flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#3eb3e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M8 10h.01M12 10h.01M16 10h.01M9 16h6M5 6h14a2 2 0 012 2v11a1 1 0 01-1 1H4a1 1 0 01-1-1V8a2 2 0 012-2z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Player Portal Website</h3>
+                <p class="text-gray-600 mb-4">
+                    A real, working player portal that connects to your existing casino management system
+                    instead of being another "coming soon" slide.
+                </p>
+                <ul class="space-y-1 text-sm text-gray-600">
+                    <li>• Live points &amp; comp balances</li>
+                    <li>• Win/loss statements</li>
+                    <li>• Tier progress &amp; card status</li>
+                    <li>• Event &amp; promotion registration</li>
+                    <li>• Personalized offers &amp; messaging</li>
+                </ul>
+            </div>
+
+            <!-- Progressive Web App -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+                <div class="w-12 h-12 mb-4 rounded-xl bg-[#e8f6fc] flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#005b8b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M7 4h10a2 2 0 012 2v13H5V6a2 2 0 012-2zM9 9h6M9 13h3" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Progressive Web App</h3>
+                <p class="text-gray-600 mb-4">
+                    A mobile-first experience that works on any device without app store headaches. Guests add it
+                    to their home screen in seconds.
+                </p>
+                <ul class="space-y-1 text-sm text-gray-600">
+                    <li>• Virtual queues for restaurants, players clubs &amp; events</li>
+                    <li>• Digital coupons &amp; offers</li>
+                    <li>• Push-style messaging and reminders</li>
+                    <li>• Contest &amp; drawing entries</li>
+                    <li>• Restaurant reservations and menus</li>
+                    <li>• Resilient, offline-aware experience</li>
+                </ul>
+            </div>
+
+            <!-- Marketing Platform -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+                <div class="w-12 h-12 mb-4 rounded-xl bg-[#e8f6fc] flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#ff6b35]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M11 5a1 1 0 011-1h6a1 1 0 011 1v11a1 1 0 01-1 1h-6a1 1 0 01-1-1V5zM5 7h2m-2 4h2m-2 4h2" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Real-Time Marketing Platform</h3>
+                <p class="text-gray-600 mb-4">
+                    A direct line to every guest, with complete tracking. Build, schedule, and analyze campaigns
+                    from the same platform that powers your portal and PWA.
+                </p>
+                <ul class="space-y-1 text-sm text-gray-600">
+                    <li>• Targeted campaigns by tier, play, or behavior</li>
+                    <li>• Real-time notifications and reminders</li>
+                    <li>• Reusable templates for common promotions</li>
+                    <li>• Engagement &amp; conversion analytics</li>
+                    <li>• Multi-channel reach across web, PWA, SMS, and email</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Feature Grid -->
+<section id="features" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Everything You Need, Nothing You Don’t
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                PlayerIQ focuses on the parts of the guest experience that move revenue:
+                fewer lines, more offers redeemed, more trips, and a better on-property flow.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Smart Queue Management -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+                <div class="w-10 h-10 rounded-lg bg-[#e8f6fc] flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-[#3eb3e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Smart Queue Management</h3>
+                <p class="text-gray-600 text-sm">
+                    Virtual queues let guests explore instead of standing in line. Real-time updates, “I need five
+                    minutes” options, and VIP priority logic are all built in.
+                </p>
+            </div>
+
+            <!-- Digital Coupons -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+                <div class="w-10 h-10 rounded-lg bg-[#e8f6fc] flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-[#ff6b35]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Digital Coupons &amp; Offers</h3>
+                <p class="text-gray-600 text-sm">
+                    Replace paper coupons with unique, trackable offers. One-tap redemption, automatic expiration,
+                    and real-time reporting come standard.
+                </p>
+            </div>
+
+            <!-- Interactive Contests -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+                <div class="w-10 h-10 rounded-lg bg-[#e8f6fc] flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-[#d4af37]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Interactive Contests</h3>
+                <p class="text-gray-600 text-sm">
+                    Build excitement with QR-based entries, PIN validation, and instant win moments.
+                    Support daily drawings, grand prizes, and on-property events.
+                </p>
+            </div>
+
+            <!-- Push Notifications -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+                <div class="w-10 h-10 rounded-lg bg-[#e8f6fc] flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-[#3eb3e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 11-4 0V5.34A6.002 6.002 0 006 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Push-Style Messaging</h3>
+                <p class="text-gray-600 text-sm">
+                    Reach guests instantly with targeted notifications. Highlight events, time-sensitive offers,
+                    or queue updates with rich content and clear calls-to-action.
+                </p>
+            </div>
+
+            <!-- Self-Service Registration -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+                <div class="w-10 h-10 rounded-lg bg-[#e8f6fc] flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-[#3eb3e6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M16 11V7a4 4 0 10-8 0v4M5 11h14v9a2 2 0 01-2 2H7a2 2 0 01-2-2v-9z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Self-Service Registration</h3>
+                <p class="text-gray-600 text-sm">
+                    Guests enroll themselves with SMS verification, then connect to existing player cards
+                    or create new accounts — with fewer trips to the club desk.
+                </p>
+            </div>
+
+            <!-- Complete Branding Control -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+                <div class="w-10 h-10 rounded-lg bg-[#e8f6fc] flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-[#005b8b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M11 5.882V19a1 1 0 001.447.894l7-3.5A1 1 0 0020 15.5V3.382a1 1 0 00-1.447-.894l-7 3.5A1 1 0 0011 5.882zM4 4h4v4H4zM4 12h4v8H4z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">Complete Branding Control</h3>
+                <p class="text-gray-600 text-sm">
+                    Your colors, your logo, your tone of voice. Update imagery, copy, layouts, and CTA destinations
+                    from the admin — no dev backlog, no releases, no app store reviews.
+                </p>
+            </div>
+        </div>
+
+        <!-- Roadmap / “Always Evolving” -->
+        <div class="mt-12 bg-white border border-dashed border-[#3eb3e6] rounded-2xl p-6 sm:p-8">
+            <div class="flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Always Evolving</h3>
+                    <p class="text-sm text-gray-600 max-w-2xl">
+                        New features are shipped regularly. Recent additions include a configurable hero carousel,
+                        “share app” tools, tier cards, and enhanced queue workflows. Dining reservations and deeper
+                        restaurant integrations are next up.
+                    </p>
+                </div>
+                <div class="text-xs text-gray-500 md:text-right">
+                    Built on the same platform trusted by 70+ properties — no “maybe someday” roadmap items.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Carousel / Admin Control Section -->
+<section class="py-20 bg-gradient-to-b from-gray-900 to-black text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Dynamic Hero Carousel You Control from PlayerIQ
+                </h2>
+                <p class="text-lg text-gray-200 mb-6">
+                    Keep your app fresh with rotating promotional banners managed entirely from the admin panel —
+                    no code, no tickets, no waiting on IT.
+                </p>
+
+                <div class="space-y-4 text-sm text-gray-200">
+                    <div>
+                        <h3 class="font-semibold mb-1">Auto-Rotating Promotions</h3>
+                        <p>
+                            Highlight your latest events, offers, dining specials, and drawings.
+                            Banners rotate automatically and are optimized for touch.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Smart Scheduling &amp; Status</h3>
+                        <p>
+                            Set start and end dates so campaigns appear and disappear on schedule.
+                            Enable, disable, or reorder images instantly.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Actionable Call-to-Actions</h3>
+                        <p>
+                            Add buttons that deep-link to queues, offers, contests, or external promos.
+                            Every click is trackable for real performance insight.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1">Full Admin Control</h3>
+                        <p>
+                            Upload images with preview, edit titles and copy live, and drag-and-drop to reorder.
+                            What you see is what guests see — in real time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Visual -->
+            <div class="relative">
+                <div class="absolute -inset-6 bg-[#3eb3e6]/30 blur-3xl rounded-3xl opacity-70"></div>
+                <div class="relative bg-gray-950 border border-white/10 rounded-3xl p-6 shadow-2xl">
+                    <!-- "Admin" style mockup -->
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2 text-xs text-gray-300">
+                            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10">
+                                🎛️
+                            </span>
+                            <span class="font-semibold uppercase tracking-wide">Hero Carousel Manager</span>
+                        </div>
+                        <span class="text-[11px] text-emerald-300 bg-emerald-500/10 px-2 py-1 rounded-full border border-emerald-500/40">
+                            Live in PlayerIQ
+                        </span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <!-- Example slide rows -->
+                        <div class="flex items-center gap-3 bg-white/5 rounded-2xl px-3 py-2">
+                            <div class="w-14 h-10 rounded-lg bg-gradient-to-br from-[#ff6b35] to-[#d4af37]"></div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="font-semibold">New Member Offer</span>
+                                    <span class="text-gray-400">Active · rotates every 6s</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">
+                                    3X points on slots this weekend
+                                </p>
+                            </div>
+                            <button class="text-[11px] px-2 py-1 rounded-full bg-white/10 hover:bg-white/20">
+                                Edit
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-3 bg-white/5 rounded-2xl px-3 py-2">
+                            <div class="w-14 h-10 rounded-lg bg-gradient-to-br from-[#3eb3e6] to-[#005b8b]"></div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="font-semibold">Dining Specials</span>
+                                    <span class="text-gray-400">Scheduled · starts Fri 4pm</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">
+                                    Surf &amp; turf promo at the steakhouse
+                                </p>
+                            </div>
+                            <button class="text-[11px] px-2 py-1 rounded-full bg-white/10 hover:bg-white/20">
+                                Edit
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-3 bg-white/5 rounded-2xl px-3 py-2">
+                            <div class="w-14 h-10 rounded-lg bg-gradient-to-br from-[#2a8fc9] to-[#0b1b2b]"></div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="font-semibold">Big Drawing Night</span>
+                                    <span class="text-gray-400">Draft · not live</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">
+                                    Grand prize at 9pm — must be present to win
+                                </p>
+                            </div>
+                            <button class="text-[11px] px-2 py-1 rounded-full bg-white/10 hover:bg-white/20">
+                                Edit
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex items-center justify-between text-[11px] text-gray-400">
+                        <span>Drag &amp; drop to reorder · click to preview in PWA</span>
+                        <button class="px-3 py-1 rounded-full bg-[#ff6b35] text-white font-semibold hover:bg-[#e55a28]">
+                            Add New Slide
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Built For Casinos / Restaurants / Hotels -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Built for Real Hospitality Operations
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                PlayerIQ is designed around how your teams already work — casino floors, restaurants, and hotels that
+                need to move fast and keep guests happy.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 text-sm">
+            <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                <div class="text-xs font-semibold text-[#3eb3e6] mb-2 uppercase tracking-wide">
+                    For Casinos
+                </div>
+                <p class="text-gray-700 mb-3">
+                    Drive trips and carded play with offers and tools your players actually use between visits.
+                </p>
+                <ul class="space-y-1 text-gray-600">
+                    <li>• Virtual queues for players club, kiosks, and events</li>
+                    <li>• Tier-aware offers and messaging</li>
+                    <li>• Contests and drawings that actually feel exciting</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                <div class="text-xs font-semibold text-[#ff6b35] mb-2 uppercase tracking-wide">
+                    For Restaurants &amp; Bars
+                </div>
+                <p class="text-gray-700 mb-3">
+                    Turn “we have a website” into a proper guest utility: menus, waitlists, specials, and events in one app.
+                </p>
+                <ul class="space-y-1 text-gray-600">
+                    <li>• Mobile waitlist &amp; seating queues</li>
+                    <li>• Daily and timeboxed F&amp;B offers</li>
+                    <li>• Easy access to menus, hours, and events</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                <div class="text-xs font-semibold text-[#d4af37] mb-2 uppercase tracking-wide">
+                    For Hotels &amp; Resorts
+                </div>
+                <p class="text-gray-700 mb-3">
+                    One place for everything on property: dining, entertainment, events, and promotions.
+                </p>
+                <ul class="space-y-1 text-gray-600">
+                    <li>• Property-wide hub for guests</li>
+                    <li>• F&amp;B and event promotions tied to stay data</li>
+                    <li>• Cross-selling between hotel, casino, and outlets</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Screenshots section-->
+
+<section id="screenshots" class="piq-screenshots-section">
+    <div class="piq-screenshots-inner">
+        <h2 class="piq-screenshots-title">See PlayerIQ in Action</h2>
+        <p class="piq-screenshots-subtitle">Real screenshots from live installations</p>
+
+        <div class="piq-screenshot-grid">
+            <div class="piq-screenshot-card">
+                <div class="piq-screenshot-frame">
+                    <img src="~/images/pwa/PlayerPortal.png" alt="Player Portal" />
+                </div>
+                <h3>Player Portal</h3>
+                <p>Complete web portal with points, offers, and account management</p>
+            </div>
+
+            <div class="piq-screenshot-card">
+                <div class="piq-screenshot-frame">
+                    <img src="~/images/pwa/Home.png" alt="PWA Dashboard" />
+                </div>
+                <h3>PWA Dashboard</h3>
+                <p>Personalized home screen with quick actions and notifications</p>
+            </div>
+
+            <div class="piq-screenshot-card">
+                <div class="piq-screenshot-frame">
+                    <img src="~/images/pwa/WaitList.png" alt="Virtual Queues" />
+                </div>
+                <h3>Virtual Queues</h3>
+                <p>Join and monitor queue position in real-time</p>
+            </div>
+
+            <div class="piq-screenshot-card">
+                <div class="piq-screenshot-frame">
+                    <img src="~/images/pwa/Coupon.png" alt="Digital Coupons" />
+                </div>
+                <h3>Digital Coupons</h3>
+                <p>One-tap redemption with unique tracking codes</p>
+            </div>
+
+            <div class="piq-screenshot-card">
+                <div class="piq-screenshot-frame">
+                    <img src="~/images/pwa/Contests.png" alt="Contests" />
+                </div>
+                <h3>Contests &amp; Drawings</h3>
+                <p>QR scanning and PIN entry for instant wins</p>
+            </div>
+
+            <div class="piq-screenshot-card">
+                <div class="piq-screenshot-frame">
+                    <img src="~/images/pwa/Winners.png" alt="Instant Wins" />
+                </div>
+                <h3>Instant Win Celebration</h3>
+                <p>Confetti animations with prize details</p>
+            </div>
+
+            <div class="piq-screenshot-card">
+                <div class="piq-screenshot-frame">
+                    <img src="~/images/pwa/Inbox.png" alt="Notifications" />
+                </div>
+                <h3>Notification Inbox</h3>
+                <p>Rich media messages with engagement tracking</p>
+            </div>
+
+            <div class="piq-screenshot-card">
+                <div class="piq-screenshot-frame">
+                    <img src="~/images/pwa/BrandingSettings.png" alt="Admin Branding" />
+                </div>
+                <h3>Admin Controls</h3>
+                <p>Complete branding and feature management</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Why PlayerIQ -->
+<section id="why" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Why Properties Choose PlayerIQ
+                </h2>
+                <p class="text-lg text-gray-600 mb-6">
+                    Strategy9 has been building casino and hospitality marketing platforms for more than two decades.
+                    PlayerIQ is the latest evolution of that work.
+                </p>
+                <ul class="space-y-4 text-sm text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#3eb3e6] mr-3 mt-0.5" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M5 13l4 4L19 7" />
+                        </svg>
+                        <div>
+                            <span class="font-semibold">It actually works.</span>
+                            <p class="text-gray-600">
+                                Live deployments, real integrations, and real results. PlayerIQ isn’t a concept —
+                                it’s in production at properties across North America.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#3eb3e6] mr-3 mt-0.5" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M5 13l4 4L19 7" />
+                        </svg>
+                        <div>
+                            <span class="font-semibold">We know casino &amp; hospitality systems.</span>
+                            <p class="text-gray-600">
+                                Experience with IGT Advantage, Aristocrat Oasis, Konami SYNKROS, restaurant and hotel POS,
+                                and the operational realities behind them.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#3eb3e6] mr-3 mt-0.5" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M5 13l4 4L19 7" />
+                        </svg>
+                        <div>
+                            <span class="font-semibold">Fast implementation.</span>
+                            <p class="text-gray-600">
+                                Typical implementations run around 30 days, not 18 months. Start with a focused rollout,
+                                then expand as your teams see success.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#3eb3e6] mr-3 mt-0.5" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M5 13l4 4L19 7" />
+                        </svg>
+                        <div>
+                            <span class="font-semibold">Enterprise security &amp; compliance.</span>
+                            <p class="text-gray-600">
+                                SOC2 Type 1 certification, encrypted data, and infrastructure designed specifically
+                                for regulated hospitality environments.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#3eb3e6] mr-3 mt-0.5" fill="none" stroke="currentColor"
+                             viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M5 13l4 4L19 7" />
+                        </svg>
+                        <div>
+                            <span class="font-semibold">Real support from people who get it.</span>
+                            <p class="text-gray-600">
+                                Direct access to Strategy9’s team — not a generic ticket queue. We configure around
+                                your property’s workflows, not the other way around.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-gradient-to-br from-[#3eb3e6] to-[#005b8b] rounded-2xl p-10 text-white">
+                <div class="space-y-8">
+                    <div class="border-b border-white/20 pb-6">
+                        <div class="text-4xl font-bold mb-1">70+</div>
+                        <div class="text-blue-100 text-sm">Properties using Strategy9 platforms</div>
+                    </div>
+                    <div class="border-b border-white/20 pb-6">
+                        <div class="text-4xl font-bold mb-1">25+</div>
+                        <div class="text-blue-100 text-sm">Years in hospitality marketing technology</div>
+                    </div>
+                    <div class="border-b border-white/20 pb-6">
+                        <div class="text-4xl font-bold mb-1">99.9%</div>
+                        <div class="text-blue-100 text-sm">Uptime target for production systems</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-1">SOC2</div>
+                        <div class="text-blue-100 text-sm">Type 1 certified security program</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Get Started CTA -->
+<section id="get-started" class="py-20 bg-gradient-to-r from-[#3eb3e6] to-[#005b8b]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Ready to See the PlayerIQ App in Action?
+        </h2>
+        <p class="text-lg text-blue-100 mb-8">
+            Book a 20-minute walkthrough with the Strategy9 team and see how PlayerIQ can improve your
+            queues, offers, contests, and guest communication — without adding to your IT backlog.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <a href="/#contact"
+               class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#ff6b35] text-white font-semibold hover:bg-[#e55a28] shadow-lg shadow-[#ff6b35]/40">
+                Schedule Your Demo
+            </a>
+            <a href="mailto:sales@strategy9.com"
+               class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-white/60 text-white font-semibold hover:bg-white/10">
+                Email sales@strategy9.com
+            </a>
+        </div>
+
+        <p class="text-xs text-blue-100">
+            Already a PlayerIQ customer? Talk to us about enabling the PWA for your property and rolling it out
+            to existing players, guests, or loyalty members.
+        </p>
+    </div>
+</section>

@@ -30,6 +30,15 @@ namespace Strategy9Website.Controllers
             return View();
         }
 
+
+        [HttpGet]
+        public IActionResult PlayerIQApp()
+        {
+            // Uses Views/Home/PlayerIQApp.cshtml
+            ViewData["Title"] = "PlayerIQ App";
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Newsletter([FromBody] NewsletterSignupModel model)
