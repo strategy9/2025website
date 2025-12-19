@@ -64,9 +64,12 @@
                 </div>
             </div>
 
-            <!-- Hero Device Mockup -->
-            <div class="hidden md:flex justify-center lg:justify-end relative">
+        <!-- Hero Device Mockup -->
+        <div class="hidden md:flex justify-center lg:justify-end">
+            <!-- Make THIS the positioning context -->
+            <div class="relative">
                 <div class="absolute -inset-10 bg-[#d4af37]/25 rounded-full blur-3xl opacity-80"></div>
+
                 <div class="relative bg-black rounded-[3rem] p-3 shadow-2xl border border-gray-800">
                     <div class="bg-black rounded-[2.5rem] overflow-hidden" style="width: 300px;">
                         <!-- Status Bar Simulation -->
@@ -81,7 +84,7 @@
                     </div>
                 </div>
 
-                <!-- Floating Badge 1 -->
+                <!-- Floating Badge 1 (top-right of phone) -->
                 <div class="absolute -right-3 top-16 bg-white rounded-xl shadow-xl px-3 py-2 text-xs">
                     <div class="flex items-center gap-2">
                         <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100">
@@ -94,8 +97,8 @@
                     </div>
                 </div>
 
-                <!-- Floating Badge 2 -->
-                <div class="absolute -left-4 bottom-16 bg-white rounded-xl shadow-xl px-3 py-2 text-xs">
+                <!-- Floating Badge 2 (left, near bottom of phone) -->
+                <div class="absolute -left-20 bottom-16 bg-white rounded-xl shadow-xl px-3 py-2 text-xs">
                     <div class="flex items-center gap-2">
                         <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#d4af37]/15">
                             <svg class="w-4 h-4 text-[#d4af37]" fill="currentColor" viewBox="0 0 20 20">
