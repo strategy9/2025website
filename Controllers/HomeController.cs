@@ -163,6 +163,21 @@ namespace Strategy9Website.Controllers
         {
             try
             {
+                // Honeypot check - if this field has a value, it's likely a bot
+                if (!string.IsNullOrEmpty(request.Website))
+                {
+                    _logger.LogWarning("Honeypot triggered - likely spam submission from IP: {IP}",
+                        HttpContext.Connection.RemoteIpAddress);
+
+                    // Return success to not tip off the bot, but don't process
+                    return Json(new
+                    {
+                        success = true,
+                        message = "Your support request has been received."
+                    });
+                }
+
+
                 // Validate request
                 if (string.IsNullOrEmpty(request.Name) ||
                     string.IsNullOrEmpty(request.Email) ||

@@ -22,6 +22,9 @@ namespace Strategy9Website.Services
         public string Priority { get; set; } = string.Empty;
         public string Subject { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
+
+        // Honeypot field - should always be empty for legitimate submissions
+        public string Website { get; set; } = string.Empty;
     }
 
     public class JiraTicketResponse

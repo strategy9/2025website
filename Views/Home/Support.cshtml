@@ -15,20 +15,20 @@
 <!-- Support Form Section -->
 <section class="py-16 bg-gray-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <!-- Support Form -->
         <div class="bg-white rounded-xl shadow-lg p-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Submit a Support Request</h2>
-            
+
             <div x-data="supportForm()">
                 <form x-on:submit.prevent="submitSupport" class="space-y-6">
-                    
+
                     <!-- Name -->
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">
                             Your Name <span class="text-red-500">*</span>
                         </label>
-                        <input type="text" x-model="name" required 
+                        <input type="text" x-model="name" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent">
                     </div>
 
@@ -37,7 +37,7 @@
                         <label class="block text-sm font-medium text-gray-700 mb-2">
                             Email Address <span class="text-red-500">*</span>
                         </label>
-                        <input type="email" x-model="email" required 
+                        <input type="email" x-model="email" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent">
                     </div>
 
@@ -46,7 +46,7 @@
                         <label class="block text-sm font-medium text-gray-700 mb-2">
                             Company/Property
                         </label>
-                        <input type="text" x-model="company" 
+                        <input type="text" x-model="company"
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent">
                     </div>
 
@@ -89,7 +89,7 @@
                         <label class="block text-sm font-medium text-gray-700 mb-2">
                             Subject <span class="text-red-500">*</span>
                         </label>
-                        <input type="text" x-model="subject" required 
+                        <input type="text" x-model="subject" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent"
                                placeholder="Brief description of your issue">
                     </div>
@@ -103,6 +103,12 @@
                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3eb3e6] focus:border-transparent"
                                   placeholder="Please provide as much detail as possible..."></textarea>
                         <p class="text-sm text-gray-500 mt-1">Include any error messages, screenshots, or steps to reproduce the issue.</p>
+                    </div>
+
+                    <!-- Honeypot field - hidden from real users, bots will fill this in -->
+                    <div style="position: absolute; left: -9999px;" aria-hidden="true">
+                        <label for="website">Website</label>
+                        <input type="text" name="website" id="website" x-model="website" tabindex="-1" autocomplete="off">
                     </div>
 
                     <!-- Submit Button -->
@@ -196,19 +202,20 @@
                 priority: '',
                 subject: '',
                 description: '',
+                website: '',  // honeypot field - should remain empty
                 submitting: false,
                 success: false,
                 error: false,
                 responseMessage: '',
                 ticketKey: '',
-                
+
                 async submitSupport() {
                     this.submitting = true;
                     this.success = false;
                     this.error = false;
                     this.responseMessage = '';
                     this.ticketKey = '';
-                    
+
                     try {
                         const response = await fetch('/Home/Support', {
                             method: 'POST',
@@ -222,17 +229,18 @@
                                 product: this.product,
                                 priority: this.priority,
                                 subject: this.subject,
-                                description: this.description
+                                description: this.description,
+                                website: this.website  // honeypot field
                             })
                         });
-                        
+
                         const result = await response.json();
-                        
+
                         if (result.success) {
                             this.success = true;
                             this.responseMessage = result.message;
                             this.ticketKey = result.ticketKey;
-                            
+
                             // Clear form
                             this.name = '';
                             this.email = '';
@@ -241,7 +249,8 @@
                             this.priority = '';
                             this.subject = '';
                             this.description = '';
-                            
+                            this.website = '';
+
                             // Scroll to success message
                             setTimeout(() => {
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -250,7 +259,7 @@
                             this.error = true;
                             this.responseMessage = result.message;
                         }
-                        
+
                     } catch (error) {
                         console.error('Error submitting support request:', error);
                         this.error = true;
